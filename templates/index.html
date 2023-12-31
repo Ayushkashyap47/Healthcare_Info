@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Information Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/healthcare.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header a, .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2c3e50;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #95a5a6;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#view-info">View Info</a>
+
+        <div class="dropdown">
+            <a href="#">Appointments</a>
+            <div class="dropdown-content">
+                <a href="#past">Past</a>
+                <a href="#future">Future</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Health Information Form</h1>
+    <form method="POST" action="">
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" name="patient_name" id="patient_name" required>
+
+        <label for="aadhar_number">aadhar_number:</label>
+        <input type="number" name="aadhar_number" id="aadhar_number" required>
+
+        <label for="uhn">UHN:</label>
+        <input type="number" name="uhn" id="uhn" required>
+
+        <label for="symptoms">Symptoms:</label>
+        <input type="text" name="symptoms" id="symptoms" required>
+
+        <label for="medicine_prescribed">Medicine Prescribed:</label>
+        <input type="text" name="medicine_prescribed" id="medicine_prescribed" required>
+
+        <label for="comments">Comments:</label>
+        <input type="text" name="comments" id="comments" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
